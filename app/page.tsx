@@ -1,31 +1,55 @@
+'use client'
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Home() {
+  const [isOpened, setIsOpened] = useState(false);
   return (
     <div>
-      <div className="flex justify-between gap-20 pl-50 pr-50 bg-gray-100">
-        <Image
-          src="/images/logo-domainesia.svg"
-          alt="Logo Domainesia"
-          className="h-8"
-          width={180}
-          height={37}
-        />
-        <input type="text" className="w-full rounded-full pl-20 pr-20 border border-gray-400" placeholder="Searching ..." />
-        <div className="flex gap-2 justify-between items-center">
+      <div className="md:pl-50 md:pr-50 pl-8 pr-8 bg-gray-100">
+        <div className="flex justify-between gap-20">
           <Image
-            src="/images/fb.svg"
-            alt="Search Icon"
+            src="/images/logo-domainesia.svg"
+            alt="Logo Domainesia"
+            className="h-8"
+            width={180}
+            height={37}
+          />
+          <input type="text" className="w-full rounded-full pl-20 pr-20 border border-gray-400" placeholder="Searching ..." />
+          <Image src="/images/burger-icon.svg"
+            onClick={() => setIsOpened(!isOpened)}
+            alt="Menu Icon"
+            className="md:hidden block"
             width={20}
             height={20}
           />
-          <Image
-            src="/images/youtube.svg"
-            alt="Search Icon"
-            width={20}
-            height={20}
-          />
+          
+          <div className="md:flex hidden gap-2 justify-between items-center">
+            <Image
+              src="/images/fb.svg"
+              alt="Search Icon"
+              width={20}
+              height={20}
+            />
+            <Image
+              src="/images/youtube.svg"
+              alt="Search Icon"
+              width={20}
+              height={20}
+            />
+          </div>
+        
         </div>
+        {isOpened && (
+        <div className={`md:flex justify-center ${isOpened?'flex':'hidden'}`}>
+          <div className="px-8 py-4 hover:text-blue-700 cursor-pointer">Home</div>
+          <div className="px-8 py-4 hover:text-blue-700 cursor-pointer">Berita</div>
+          <div className="px-8 py-4 hover:text-blue-700 cursor-pointer">Tips</div>
+          <div className="px-8 py-4 hover:text-blue-700 cursor-pointer">Ebook</div>
+          <div className="px-8 py-4 hover:text-blue-700 cursor-pointer">Video</div>
+          <div className="px-8 py-4 hover:text-blue-700 cursor-pointer">Panduan</div>
+        </div>
+        )}
       </div>
       <div className="flex md:flex-row flex-col justify-between md:pl-50 md:pr-50 pl-8 pr-8 
       bg-linear-to-b from-[#009eed] to-[#00aeef] w-full md:h-80 h-120">
@@ -74,7 +98,7 @@ export default function Home() {
           </div>
         </div>
 
-        
+
         <div className="drop-shadow-lg rounded-lg bg-white hover:-translate-y-4 transition-all duration-300">
           <Image
             className="w-full rounded-lg"
