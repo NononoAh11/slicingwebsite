@@ -27,13 +27,15 @@ export default function Home() {
           />
         </div>
       </div>
-      <div className="flex justify-between pl-50 pr-50 bg-linear-to-b from-[#009eed] to-[#00aeef] w-full h-80">
-        <div className="flex flex-col justify-center gap-6">
+      <div className="flex md:flex-row flex-col justify-between md:pl-50 md:pr-50 pl-8 pr-8 
+      bg-linear-to-b from-[#009eed] to-[#00aeef] w-full md:h-80 h-120">
+        <div className="flex flex-col md:justify-start md:items-start justify-center items-center 
+        gap-6 md:w-1/2 w-full">
           <h1 className="text-3xl font-bold text-white">Selamat datang di Domainesia</h1>
           <p className="text-white">Temukan domain impianmu di sini dengan harga
             yang kompetitif</p>
         </div>
-        <div className="h-full">
+        <div className="h-full md:w-1/2 w-full flex md:justify-end justify-center">
           <Image
             className="h-full"
             src="/images/ilustrasi-domainesia.svg"
@@ -50,9 +52,11 @@ export default function Home() {
         transition duration-300 self-center
          bg-blue-500 text-white">Lainnya</button>
       </div>
-      <div className="grid grid-cols-3 gap-10 px-50 py-10 bg-white">
+      <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 
+      gap-10 md:px-50 px-8 py-10 bg-white">
         {/* start konten item */}
-        <div className="drop-shadow-lg rounded-lg bg-white hover:-translate-y-4 transition-all duration-300">
+        <div className="drop-shadow-lg rounded-lg bg-white 
+        hover:-translate-y-4 transition-all duration-300">
           <Image
             className="w-full rounded-lg"
             src="/images/blog1.webp"
