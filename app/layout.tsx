@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Belajar Next.js 13",
-  description: "belajar next.js 13 dengan tailwindcss dan typescript",
+  title: "LINKSOS | Lingkar Sosial Indonesia",
+  description:
+    "Lingkar Sosial Indonesia, penggerak inklusi dan pusat pemberdayaan disabilitas.",
 };
 
 export default function RootLayout({
@@ -24,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="id"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
